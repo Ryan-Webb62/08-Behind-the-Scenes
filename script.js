@@ -125,6 +125,7 @@ f(); */
 // };
 
 // Solution 2 use an arrow function inside the methode as it doesn't have a this keyword
+/* 
 const jonas = {
   firstName: 'Jonas',
   year: 1991,
@@ -157,3 +158,61 @@ var addArrow = (a, b) => {
 };
 
 addArrow(2, 5, 8);
+ */
+
+// Primatives vs Objects lecture
+/* 
+let age = 30;
+let oldAge = age;
+age = 31;
+
+console.log(age);
+console.log(oldAge);
+
+const me = {
+  name: 'Jonas',
+  age: 30,
+};
+
+const friend = me;
+friend.age = 27;
+
+console.log(friend);
+console.log(me);
+ */
+//  Primative types
+let lastName = 'Williams';
+let oldLastName = lastName;
+lastName = 'Davis';
+
+console.log(lastName);
+console.log(oldLastName);
+
+// Reference types
+const jessica = {
+  firstName: 'Jessica',
+  lastName: 'Williams',
+  age: 27,
+};
+
+const marriedJessica = jessica;
+marriedJessica.lastName = 'Davis';
+console.log(`Before marriage: `, jessica);
+console.log(`After marriage: `, marriedJessica);
+
+// Copying objects
+const jessica2 = {
+  firstName: 'Jessica',
+  lastName: 'Williams',
+  age: 27,
+  family: ['Alice', 'Bob'],
+};
+
+// Object.assign will only make a shallow copy without 2nd level objects
+const jessicaCopy = Object.assign({}, jessica2);
+jessicaCopy.lastName = 'Davis';
+jessicaCopy.family.push('Mary');
+jessicaCopy.family.push('John');
+
+console.log(jessica2);
+console.log(jessicaCopy);
